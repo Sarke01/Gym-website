@@ -33,17 +33,19 @@ window.addEventListener('load', () => {
         username: usernameInput.value,
         password: passwordInput.value
       };
-    await fetch("https://644a36d979279846dce1bab8.mockapi.io/api/v1/User", {
-        method: 'GET',
+    await fetch("https://localhost:8080/users/login", {
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        // body: JSON.stringify(bodyData)
+        body: JSON.stringify(bodyData)
       })
         .then(response => response.json())
-        .then(data => {data.forEach(element => {
-          if(element.username=="mihajlo01")console.log(element)
-        });})
+        .then(data =>{
+          if(data.username==bodyData.username && data.password==bodyData.password){
+            console.log("sve je suepr");
+          }
+        })
         .catch(error => console.error(error));
   
     
