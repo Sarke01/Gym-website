@@ -33,38 +33,33 @@ window.addEventListener('load', () => {
         username: usernameInput.value,
         password: passwordInput.value
       };
-    await fetch("https://localhost:8080/users/login", {
+    await fetch("http://localhost:8080/users/login", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(bodyData)
       })
-        .then(response => response.json())
-        .then(data =>{
-          if(data.username==bodyData.username && data.password==bodyData.password){
-            console.log("sve je suepr");
-          }
+        .then(response => {if(response.status==200) return response.json()
+        else throw new Error("Unauthorized")})
+        .then(data => {
+          // Set the "session" cookie with a value of "123456"
+          const expiryDate = new Date();
+          expiryDate.setTime(expiryDate.getTime() + (7 * 24 * 60 * 60 * 1000)); // Expires in 7 days
+          document.cookie = `session=${data.username}; expires=${expiryDate.toUTCString()}; path=/`;
+
+          // Redirect the user to the dashboard page
+          window.location.href = '/index.html';
         })
-        .catch(error => console.error(error));
+        .catch(error => console.log(error));
   
     
-    // Set the "session" cookie with a value of "123456"
-    // const expiryDate = new Date();
-    // expiryDate.setTime(expiryDate.getTime() + (7 * 24 * 60 * 60 * 1000)); // Expires in 7 days
-    // document.cookie = `session=${bodyData.username}; expires=${expiryDate.toUTCString()}; path=/`;
-
-    // // Redirect the user to the dashboard page
-    // window.location.href = '/index.html';
+    
     
   }
 
-  loginBtn.addEventListener("click",()=>{
-    login();
-  })
-
-  form.addEventListener("submit",(e)=>{
+  form.addEventListener("submit",async (e)=>{
     e.preventDefault();
-    login();
+    await login();
   })
 
