@@ -33,36 +33,33 @@ window.addEventListener('load', () => {
         username: usernameInput.value,
         password: passwordInput.value
       };
-    await fetch("https://644a36d979279846dce1bab8.mockapi.io/api/v1/User", {
-        method: 'GET',
+    await fetch("http://localhost:8080/users/login", {
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        // body: JSON.stringify(bodyData)
+        body: JSON.stringify(bodyData)
       })
-        .then(response => response.json())
-        .then(data => {data.forEach(element => {
-          if(element.username=="mihajlo01")console.log(element)
-        });})
-        .catch(error => console.error(error));
+        .then(response => {if(response.status==200) return response.json()
+        else throw new Error("Unauthorized")})
+        .then(data => {
+          // Set the "session" cookie with a value of "123456"
+          const expiryDate = new Date();
+          expiryDate.setTime(expiryDate.getTime() + (7 * 24 * 60 * 60 * 1000)); // Expires in 7 days
+          document.cookie = `session=${data.username}; expires=${expiryDate.toUTCString()}; path=/`;
+
+          // Redirect the user to the dashboard page
+          window.location.href = '/index.html';
+        })
+        .catch(error => console.log(error));
   
     
-    // Set the "session" cookie with a value of "123456"
-    // const expiryDate = new Date();
-    // expiryDate.setTime(expiryDate.getTime() + (7 * 24 * 60 * 60 * 1000)); // Expires in 7 days
-    // document.cookie = `session=${bodyData.username}; expires=${expiryDate.toUTCString()}; path=/`;
-
-    // // Redirect the user to the dashboard page
-    // window.location.href = '/index.html';
+    
     
   }
 
-  loginBtn.addEventListener("click",()=>{
-    login();
-  })
-
-  form.addEventListener("submit",(e)=>{
+  form.addEventListener("submit",async (e)=>{
     e.preventDefault();
-    login();
+    await login();
   })
 
