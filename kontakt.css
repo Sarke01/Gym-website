@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.header{
+    height: 100px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: white;
+    z-index: 2;
+}
+.container{
+    display: flex;
+    height: 100%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+}
+.levo img{
+    height: 32px;
+    width: 32px;
+}
+.left,.middle,.right{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navigation-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 1800px; */    
+    width: 100%;
+    margin:0 auto;
+}
+.navigation{
+    height:40px ;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    background-color: rgb(28, 77, 135);
+    width: 50%;
+    color: rgb(255, 255, 255);
+
+}
+.navigation p{
+    display: flex;
+    justify-content: center;
+}
+.navigation p a{
+    text-decoration:none;
+    color: rgb(255, 255, 255);
+
+}.navigation p a:hover{
+    color:#FAA831;
+}
+
+.image1{
+    background-image: url(images/gym.jpg);
+    min-height: 45vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+}
+.hero{
+    width: 900px;
+    margin: 0 auto;
+    padding-top:250px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+.hero h1{
+    font-size: 40px;
+    font-weight: 600;
+}
+.container-mapa{
+    width: 900px;
+    margin: 0 auto;
+    
+}
+.container-mapa img{
+    max-width: 100%;
+    margin: 50px 0;
+}
+.forms{
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    height:200px;
+
+}
+.levo{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+.levo-flex{
+    display: flex;
+    gap: 20px;
+}
+.description p:first-of-type
+{
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 500;
+} 
+.grey{
+    color: rgb(119, 119, 119);
+}
+.input-box{
+    width: 100%;
+    height: 100%;
+}
+.sredina{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+}
+.sredina input{
+    font-family: inherit;
+    padding: 10px 20px;
+}
+textarea{
+    height: 100%;
+    display: block;
+    height: 75%;
+    margin-bottom: 10px;
+    font-family: inherit;
+    padding: 10px 20px;
+}
+.form-control{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    
+}
+#submit-btn{
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+    background:rgb(28, 77, 135);
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#submit-btn:hover{
+    background:#FAA831;
+}
+.footer{
+    background-image:url(images/footer.png);
+    min-width: 100vw;
+    background-position: center;
+    background-size: cover;
+    height:40vh;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+}
+.footer button{
+    margin-top: 20px;
+    padding:10px 30px;
+    background-color: #FAA831;
+    color:rgb(255, 255, 255);
+    font-size: 20px;
+    cursor: pointer;
+    transition:all 0.8s;
+}
+.footer button:hover{
+    background-color:rgb(28, 77, 135) ;
+}
+
+.form-control.success input,
+.form-control.success textarea {
+	border:2px solid #2ecc71;
+}
+
+.form-control.error input,
+.form-control.error textarea {
+	border:2px solid #e74c3c;
+}
+
+.form-control i {
+	visibility: hidden;
+	position: absolute;
+	top: 11px;
+	right: 10px;
+}
+
+.form-control.success i.fa-check-circle {
+	color: #2ecc71;
+	visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+	color: #e74c3c;
+	visibility: visible;
+}
+
+.form-control small {
+	color: #e74c3c;
+	position: absolute;
+	bottom:-25px;
+	left: 0;
+	visibility: hidden;
+}
+
+.form-control.error small {
+	visibility: visible;
+}
+
