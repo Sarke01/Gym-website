@@ -1,5 +1,10 @@
 window.addEventListener('load', () => {
     const sessionId = getCookie('session');
+    const darkMode=getCookie("darkMode");
+    console.log(darkMode);
+    if(darkMode=="true"){
+      applyDark();
+    }
     if (!sessionId) {
       // Redirect the user to the dashboard page
       window.location.href = '/login.html';
@@ -26,6 +31,13 @@ const email=document.getElementById('email');
 const theme=document.getElementById('theme');
 const message=document.getElementById('message');
 const btn=document.getElementById('submit-btn');
+const darkTheme=document.querySelector(".navigation button");
+const themeImg=darkTheme.querySelector("img");
+const body=document.querySelector("body");
+const logoContainer=document.querySelector(".container");
+const grey=document.querySelectorAll(".grey");
+const forms=document.querySelector(".forms")
+
 
 btn.addEventListener('click', e=> {
     checkInputs();
@@ -95,6 +107,45 @@ function isAllGood(){
             return true;
         }
         else return false;
-    }
+}
 
- 
+const applyDark=()=>{
+    themeImg.src = 'images/dark-theme.png';
+    body.style.backgroundColor="#777777"
+    // body.style.color="white"
+    logoContainer.style.backgroundColor="#777777"
+    logoContainer.style.color="white"
+    forms.style.backgroundColor="rgb(204, 200, 200)"
+    // grey.style.color="white";
+    grey.forEach(element => {
+        element.style.color="black";
+    });
+
+}
+
+const applyLight=()=>{
+    themeImg.src = 'images/light-theme.png';
+    body.style.backgroundColor="white"
+    body.style.color="black";
+    logoContainer.style.backgroundColor="white"
+    logoContainer.style.color="#777777"
+    forms.style.backgroundColor="white"
+    // grey.style.color="#777777";
+    grey.forEach(element => {
+        element.style.color="#777777";
+    });
+}
+
+
+darkTheme.addEventListener("click",()=>{
+  if (themeImg.src.includes('dark-theme')){
+    document.cookie = "darkMode=false; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+    applyLight();
+  }
+  else {
+    document.cookie = "darkMode=true; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+    applyDark();
+  }
+})
+
+

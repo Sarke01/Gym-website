@@ -1,5 +1,10 @@
 window.addEventListener('load', () => {
     const sessionId = getCookie('session');
+    const darkMode=getCookie("darkMode");
+    console.log(darkMode);
+    if(darkMode=="true"){
+      applyDark();
+    }
     if (!sessionId) {
       // Redirect the user to the dashboard page
       window.location.href = '/login.html';
@@ -23,6 +28,14 @@ window.addEventListener('load', () => {
 
 
 const arrowUpBtn=document.querySelector('#arrow-up-btn');
+const darkTheme=document.querySelector(".navigation button");
+const themeImg=darkTheme.querySelector("img");
+const body=document.querySelector("body");
+const logoContainer=document.querySelector(".container");
+const podnaslov=document.querySelector(".podnaslov");
+const grey=document.querySelector(".grey");
+
+
 
 window.addEventListener('scroll',checkHeight);
 
@@ -40,4 +53,39 @@ arrowUpBtn.addEventListener('click',()=>{
         top:0,
         behavior:"smooth"
     })
+})
+
+
+const applyDark=()=>{
+    themeImg.src = 'images/dark-theme.png';
+    body.style.backgroundColor="#777777"
+    body.style.color="white"
+    logoContainer.style.backgroundColor="#777777"
+    logoContainer.style.color="white"
+    slider.style.backgroundColor="rgb(204, 200, 200)"
+    podnaslov.style.color="white";
+    grey.style.color="white";
+}
+
+const applyLight=()=>{
+    themeImg.src = 'images/light-theme.png';
+    body.style.backgroundColor="white"
+    body.style.color="black";
+    logoContainer.style.backgroundColor="white"
+    logoContainer.style.color="#777777"
+    slider.style.backgroundColor="white"
+    podnaslov.style.color="#777777";
+    grey.style.color="#777777";
+}
+
+
+darkTheme.addEventListener("click",()=>{
+  if (themeImg.src.includes('dark-theme')){
+    document.cookie = "darkMode=false; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+    applyLight();
+  }
+  else {
+    document.cookie = "darkMode=true; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+    applyDark();
+  }
 })

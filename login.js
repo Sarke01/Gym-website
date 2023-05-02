@@ -1,7 +1,8 @@
 const loginBtn=document.getElementById("login-button")
+const regBtn=document.getElementById("register-button")
 const usernameInput=document.getElementById("username-input")
 const passwordInput=document.getElementById("password-input")
-const form=document.querySelector(".form");
+const form=document.querySelector(".form")
 
 window.addEventListener('load', () => {
     const sessionId = getCookie('session');
@@ -51,12 +52,28 @@ window.addEventListener('load', () => {
           // Redirect the user to the dashboard page
           window.location.href = '/index.html';
         })
-        .catch(error => console.log(error));
-  
-    
-    
-    
+        .catch(error =>{
+          const errorMessage = document.createElement('p');
+          errorMessage.innerText = 'Pogresno korisnicko ime ili lozinka';
+          errorMessage.style.fontSize="1.25rem";
+          errorMessage.style.color="red";
+          form.insertBefore(errorMessage, document.getElementById('login-button'));
+          const inputs=document.querySelectorAll(".input");
+          inputs.forEach(element=>{
+            element.style.border="1px solid red"
+            element.addEventListener('focus', () => {
+              element.style.border = '1px solid #ccc';
+              errorMessage.remove();
+            });
+          });
+        });
   }
+
+  regBtn.addEventListener("click",(e)=>{
+    e.preventDefault();
+    window.location.href = '/registration.html';
+
+  })
 
   form.addEventListener("submit",async (e)=>{
     e.preventDefault();
