@@ -1,7 +1,6 @@
 window.addEventListener('load', () => {
     const sessionId = getCookie('session');
     const darkMode=getCookie("darkMode");
-    console.log(darkMode);
     if(darkMode=="true"){
       applyDark();
     }
@@ -62,6 +61,7 @@ const applyDark=()=>{
     body.style.color="white"
     logoContainer.style.backgroundColor="#777777"
     logoContainer.style.color="white"
+    logoContainer.style.borderBottom="2px solid  rgb(28, 77, 135)"
     slider.style.backgroundColor="rgb(204, 200, 200)"
     podnaslov.style.color="white";
     grey.style.color="white";
@@ -73,6 +73,7 @@ const applyLight=()=>{
     body.style.color="black";
     logoContainer.style.backgroundColor="white"
     logoContainer.style.color="#777777"
+    logoContainer.style.borderBottom="0"
     slider.style.backgroundColor="white"
     podnaslov.style.color="#777777";
     grey.style.color="#777777";

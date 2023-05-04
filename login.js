@@ -3,6 +3,7 @@ const regBtn=document.getElementById("register-button")
 const usernameInput=document.getElementById("username-input")
 const passwordInput=document.getElementById("password-input")
 const form=document.querySelector(".form")
+const guestBtn=document.querySelector("#guest-button")
 
 window.addEventListener('load', () => {
     const sessionId = getCookie('session');
@@ -55,8 +56,10 @@ window.addEventListener('load', () => {
         .catch(error =>{
           const errorMessage = document.createElement('p');
           errorMessage.innerText = 'Pogresno korisnicko ime ili lozinka';
-          errorMessage.style.fontSize="1.25rem";
+          errorMessage.style.fontSize="1rem";
           errorMessage.style.color="red";
+          errorMessage.style.padding="0 3px"
+          if(!form.querySelector("p"))
           form.insertBefore(errorMessage, document.getElementById('login-button'));
           const inputs=document.querySelectorAll(".input");
           inputs.forEach(element=>{
@@ -78,5 +81,16 @@ window.addEventListener('load', () => {
   form.addEventListener("submit",async (e)=>{
     e.preventDefault();
     await login();
+  })
+
+  guestBtn.addEventListener("click",(e)=>{
+    e.preventDefault();
+    // Set the "session" cookie with a value of "123456"
+    const expiryDate = new Date();
+    expiryDate.setTime(expiryDate.getTime() + (7 * 24 * 60 * 60 * 1000)); // Expires in 7 days
+    document.cookie = `session=guest; expires=${expiryDate.toUTCString()}; path=/`;
+
+    // Redirect the user to the dashboard page
+    window.location.href = '/index.html';
   })
 

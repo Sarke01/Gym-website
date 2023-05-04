@@ -1,7 +1,6 @@
 window.addEventListener('load', () => {
     const sessionId = getCookie('session');
     const darkMode=getCookie("darkMode");
-    console.log(darkMode);
     if(darkMode=="true"){
       applyDark();
     }
