@@ -34,7 +34,7 @@
     margin:0 auto;
 }
 .navigation{
-    height:40px ;
+    height:45px ;
     display: flex;
     align-items: center;
     justify-content:space-around;
@@ -111,9 +111,41 @@ table caption{
     top: 0;
     left: 0;
     opacity: 1;
-    transition: 2s;
+    transition: all 2s;
     border: 4px solid #FAA831;
+    margin: 0 auto;
 }
+
+h1{
+    text-align: center;
+    margin-top: 30px;
+
+}
+
+.navigation button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes disapper {
+    from {
+      opacity: 1;
+      width: 100%; 
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      width: 10%;
+      transform: translateX(100%);
+    }
+  }
+
 #prices,
 #prices1{
     position: absolute;
