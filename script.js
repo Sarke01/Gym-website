@@ -79,6 +79,10 @@ function checkInputs(){
 
     if(isAllGood()){
         alert("Poruka je poslata !");
+        name2.value="";
+        email.value="";
+        theme.value="";
+        message.value="";
     }
 }
 

@@ -73,10 +73,14 @@
 }
 .image1{
     background-image: url(images/gym.jpg);
-    min-height: 100vh;
-    width: 100vw;
+     min-height: 100vh;
+    /* width: 100vw;  */
     background-position: center;
-    background-size: cover;
+    /* background-size: cover; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
 }
 .image1 p{
     margin: 0 auto;
@@ -87,15 +91,20 @@
 .image1 h1{
     color: rgb(255, 255, 255);
     margin-bottom: 10px;
-    font-size: 50px;
+    font-size: 4rem;
 }
 .logo{
     max-width: 100%;
 }
 .hero{
-    width: 900px;
+    /* width: 900px; */
     margin: 0 auto;
-    padding-top: 400px;
+    /* padding-top: 400px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 10%;
 
 }
 .hero button{
@@ -118,7 +127,7 @@
 }
 
 .testimonial-container{
-    width: 900px;
+    /* width: 900px; */
     margin: 0 auto;
     text-align: center;
 }
@@ -147,12 +156,18 @@
     gap: 15px;
     margin: 50px 0;
     font-weight: 600;
+    justify-content: center;
 }
-.testimonial-flex div{
-    flex:1;
-    text-align: left;
+
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
 .testimonial-flex img{
+    /* display: block; */
     max-width: 100%;
 }
 .testimonial-flex div span:last-child{
@@ -160,7 +175,8 @@
 }
 .training{
     display: flex;
-    justify-content: space-around;
+    justify-content:center;
+    gap: 20px ;
 }
 
 .down-section{
@@ -171,7 +187,7 @@
     position: relative;
     overflow: hidden;
     height: 350px;
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     margin-top: 50px;
     /* background-color: rgb(204, 200, 200); */
@@ -193,6 +209,7 @@
     padding: 20px;
     justify-content: space-between;
     color: #777777;
+    font-size: 1.25rem;
 }
 
 .slider-btn{
@@ -205,6 +222,7 @@
     color: white;
     top: 50%;
     transform: translateY(-50%);
+    /* margin: 0 5px; */
 }
 .slider-left{
     left: 10px;
@@ -233,8 +251,8 @@
     background-color:rgb(207, 202, 202) ;
     border-radius: 50%;
     position: fixed;
-    right: 250px;
-    bottom: 100px;
+    right: 5%;
+    bottom: 50px;
     background-color: #FAA831;
 }
 .up-arrow-pic{
@@ -247,7 +265,7 @@
 
 .footer{
     background-image:url(images/footer.png);
-    min-width: 100vw;
+    min-width: 95vw;
     background-position: center;
     background-size: cover;
     height:40vh;
@@ -258,6 +276,7 @@
     align-items: center;
     color: white;
     font-size: 30px;
+    padding: 30px;
 }
 .footer button{
     margin-top: 20px;
@@ -272,3 +291,24 @@
 .footer button:hover{
     background-color:rgb(28, 77, 135) ;
 }
+
+img {
+    max-width: 100%;
+}
+
+
+@media screen and (max-width: 800px) {
+    .testimonial-flex {
+      flex-direction: column;
+    }
+    .hero p {
+        font-size: 15px;
+    }
+    .hero h1 {
+        font-size: 3rem;
+    }
+    .slide-flex{
+        font-size: 0.85rem;
+    }
+  }
+  

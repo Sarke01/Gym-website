@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
 .header{
     height: 100px;
@@ -63,21 +64,26 @@
     background-image: url(images/gym.jpg);
     min-height: 45vh;
     background-position: center;
-    background-size: cover;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
 }
 .hero{
     width: 900px;
     margin: 0 auto;
-    padding-top:250px;
     text-align: center;
     color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .hero h1{
     font-size: 40px;
     font-weight: 600;
 }
 .container-mapa{
+    display: flex;
     max-width: 900px;
     margin: 20px auto;
 }
@@ -91,7 +97,8 @@
     display: flex;
     align-items: top;
     justify-content: space-between;
-    height:200px;
+    /* height:200px; */
+    gap: 20px;
     padding: 25px 20px;
 
 }
@@ -113,24 +120,25 @@
 .grey{
     color: rgb(119, 119, 119);
 }
-.input-box{
+
+/* .input-box{
     width: 100%;
     height: 100%;
-}
+} */
 .sredina{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items:center;
+    align-items:flex-start    ;
 }
 .sredina input{
     font-family: inherit;
     padding: 10px 20px;
 }
 textarea{
-    height: 100%;
+    /* height: 100%; */
     display: block;
-    height: 75%;
+    /* height: 75%; */
     margin-bottom: 10px;
     font-family: inherit;
     padding: 10px 20px;
@@ -166,6 +174,7 @@ textarea{
     align-items: center;
     color: white;
     font-size: 30px;
+    padding: 30px;
 }
 .footer button{
     margin-top: 20px;
@@ -230,3 +239,26 @@ textarea{
     align-items: center;
     justify-content: center;
 }
+
+
+@media screen and (max-width: 800px) {
+    .forms {
+      width: 100%;
+      flex-direction: column;
+      gap: 30px ;
+    }
+    .levo{
+        gap: 20px;
+        flex-direction: row;
+    }
+    .sredina{
+        gap: 30px;
+    }
+    .form-control{
+        width: 100%;
+    }
+    textarea{
+        width: 100%;
+    }
+  }
+  
