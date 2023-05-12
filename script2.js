@@ -35,6 +35,9 @@ const body=document.querySelector("body");
 const logoContainer=document.querySelector(".container");
 const podnaslov=document.querySelector(".podnaslov");
 const grey=document.querySelector(".grey");
+const glow1=document.querySelector(".testimonial-container h2");
+const glow2=document.querySelector(".down-section h2");
+
 
 
 
@@ -67,6 +70,12 @@ const applyDark=()=>{
     slider.style.backgroundColor="rgb(204, 200, 200)"
     podnaslov.style.color="white";
     grey.style.color="white";
+    glow1.style.textShadow = '0px 0px 20px #fff, 0px 0px 20px #FAA831';
+    glow2.style.textShadow = '0px 0px 20px #fff, 0px 0px 20px #FAA831';
+
+
+
+    
 }
 
 const applyLight=()=>{
@@ -79,6 +88,10 @@ const applyLight=()=>{
     slider.style.backgroundColor="white"
     podnaslov.style.color="#777777";
     grey.style.color="#777777";
+    glow1.style.textShadow= " 0px 0px 10px #555, 0px 0px 20px #000"
+    glow2.style.textShadow= " 0px 0px 10px #555, 0px 0px 20px #000"
+
+
 }
 
 

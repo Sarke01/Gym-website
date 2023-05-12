@@ -36,6 +36,8 @@ const body=document.querySelector("body");
 const darkTheme=document.querySelector(".navigation button");
 const themeImg=darkTheme.querySelector("img");
 const logoContainer=document.querySelector(".container");
+const glow=document.querySelector("h1");
+
 
 
 
@@ -68,6 +70,8 @@ const applyDark=()=>{
   logoContainer.style.backgroundColor="#777777"
   logoContainer.style.color="white"
   logoContainer.style.borderBottom="2px solid  rgb(28, 77, 135)"
+  glow.style.textShadow = '0px 0px 20px #fff, 0px 0px 20px #FAA831';
+
 }
 
 const applyLight=()=>{
@@ -77,6 +81,8 @@ const applyLight=()=>{
   logoContainer.style.backgroundColor="white"
   logoContainer.style.color="#777777"
   logoContainer.style.borderBottom="0"
+  glow.style.textShadow= " 0px 0px 10px #555, 0px 0px 20px #000"
+
 }
 
 darkTheme.addEventListener("click",()=>{
