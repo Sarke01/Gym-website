@@ -86,10 +86,10 @@ window.addEventListener('load', () => {
   guestBtn.addEventListener("click",(e)=>{
     e.preventDefault();
     // Set the "session" cookie with a value of "123456"
-    const expiryDate = new Date();
-    expiryDate.setTime(expiryDate.getTime() + (7 * 24 * 60 * 60 * 1000)); // Expires in 7 days
-    document.cookie = `session=guest; expires=${expiryDate.toUTCString()}; path=/`;
-
+    // const expiryDate = new Date();
+    // expiryDate.setTime(expiryDate.getTime() + (7 * 24 * 60 * 60 * 1000)); // Expires in 7 days
+    // document.cookie = `session=guest; expires=${expiryDate.toUTCString()}; path=/`;
+    sessionStorage.setItem('session',"guest");
     // Redirect the user to the dashboard page
     window.location.href = '/index.html';
   })

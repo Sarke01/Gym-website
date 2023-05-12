@@ -1,13 +1,15 @@
 window.addEventListener('load', () => {
     const sessionId = getCookie('session');
+    const sessionGuest = sessionStorage.getItem('session');
     const darkMode=getCookie("darkMode");
     if(darkMode=="true"){
       applyDark();
     }
-    if (!sessionId) {
+    if (!sessionGuest && !sessionId) {
       // Redirect the user to the dashboard page
       window.location.href = '/login.html';
     }
+    
   });
   
   function getCookie(name) {
