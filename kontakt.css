@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('./fonts/Poppins-Regular.ttf') format('truetype');
+    font-style: normal;
+  }
+
 *{
     margin: 0;
     padding: 0;
@@ -20,6 +26,11 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.logo{
+    max-width: 100%;
+}
+
 .levo img{
     height: 32px;
     width: 32px;
@@ -68,7 +79,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    /* margin-top: 100px; */
 }
 .hero{
     width: 900px;
@@ -243,6 +254,16 @@ textarea{
     justify-content: center;
 }
 
+#hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+#hamburger-menu img{
+    width: 40px;
+    margin-right: 20px;
+}
+
 
 @media screen and (max-width: 800px) {
     .forms {
@@ -263,5 +284,42 @@ textarea{
     textarea{
         width: 100%;
     }
+    #hamburger-menu{
+        display: flex;
+        justify-content: right;
+        flex: 1 ;
+
+    }
+
+    .right{
+        display: none;
+    }
+
+    .header{
+        position: static;
+        height: auto;
+    }
+
+    .navigation{
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        padding: 8px 0;
+        font-size: 1.25rem;
+    }
   }
   
+  .toggle-active{
+    display: none;
+}
+
+  @media screen and (min-width: 801px) {
+    /* Show nav */
+    .navigation-div {
+      display: flex;
+    }
+    /* Hide hamburger menu */
+    /* .hamburger-menu {
+      display: none;
+    } */
+  }

@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('./fonts/Poppins-Regular.ttf') format('truetype');
+    font-style: normal;
+  }
+
 *{
     margin: 0;
     padding: 0;
@@ -331,6 +337,10 @@ img {
     max-width: 100%;
 }
 
+.toggle-active{
+    display: none;
+}
+
 
 @media screen and (max-width: 800px) {
     .testimonial-flex {
@@ -346,5 +356,42 @@ img {
         font-size: 0.85rem;
     }
 
+    /* hamburger menu */
+
+    #hamburger-menu{
+        display: flex;
+        justify-content: right;
+        flex: 1 ;
+
+    }
+
+    .right{
+        display: none;
+    }
+
+    .header{
+        position: static;
+        height: auto;
+    }
+
+    .navigation{
+        flex-direction: column;
+        height: auto;
+        padding: 8px 0;
+        width: 100%;
+        font-size: 1.25rem;
+    }
+
+    .image1{
+        margin: auto;
+    }
+    
+  }
+
+  @media screen and (min-width: 801px) {
+    .navigation-div {
+      display: flex;
+    }
+    
   }
   

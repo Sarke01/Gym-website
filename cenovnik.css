@@ -20,6 +20,11 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.logo{
+    max-width: 100%;
+}
+
 .left,.middle,.right{
     flex: 1;
     display: flex;
@@ -123,7 +128,7 @@ table caption{
 h1{
     text-align: center;
     margin-top: 30px;
-    text-shadow:0px 0px 20px #fff,0px 0px 20px #FAA831;
+    text-shadow:0px 0px 10px #555, 0px 0px 20px #000;
 
 
 }
@@ -200,10 +205,64 @@ img {
     max-width: 100%;
 }
 
+#hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+#hamburger-menu img{
+    width: 40px;
+    margin-right: 20px;
+}
+
+.toggle-active{
+    display: none;
+}
+
 @media screen and (max-width: 800px) {
     .table-container,
     .table-container1{
     width: 75%;
 }
+
+#hamburger-menu{
+    display: flex;
+    justify-content: right;
+    flex: 1 ;
+
+}
+
+.right{
+    display: none;
+}
+
+.header{
+    position: static;
+    height: auto;
+}
+
+.navigation{
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    padding: 8px 0;
+    font-size: 1.25rem;
+}
+
+body {
+    padding-top:0;
+}
+
+}
+
+  @media screen and (min-width: 801px) {
+    /* Show nav */
+    .navigation-div {
+      display: flex;
+    }
+    /* Hide hamburger menu */
+    /* .hamburger-menu {
+      display: none;
+    } */
   }
   
