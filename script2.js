@@ -28,15 +28,15 @@ window.addEventListener('load', () => {
   }
 
 
-const arrowUpBtn=document.querySelector('#arrow-up-btn');
-const darkTheme=document.querySelector(".navigation button");
+const arrowUpBtn=document.querySelector('#strelica-gore');
+const darkTheme=document.querySelector(".navigacija button");
 const themeImg=darkTheme.querySelector("img");
 const body=document.querySelector("body");
-const logoContainer=document.querySelector(".container");
+const logoContainer=document.querySelector(".kontejner");
 const podnaslov=document.querySelector(".podnaslov");
-const grey=document.querySelector(".grey");
+const siva=document.querySelector(".siva");
 const glow1=document.querySelector(".testimonial-container h2");
-const glow2=document.querySelector(".down-section h2");
+const glow2=document.querySelector(".donji-deo h2");
 
 
 
@@ -61,7 +61,7 @@ arrowUpBtn.addEventListener('click',()=>{
 
 
 const applyDark=()=>{
-    themeImg.src = 'images/dark-theme.png';
+    themeImg.src = 'slike/dark-theme.png';
     body.style.backgroundColor="#777777"
     body.style.color="white"
     logoContainer.style.backgroundColor="#777777"
@@ -69,7 +69,7 @@ const applyDark=()=>{
     logoContainer.style.borderBottom="2px solid  rgb(28, 77, 135)"
     slider.style.backgroundColor="rgb(204, 200, 200)"
     podnaslov.style.color="white";
-    grey.style.color="white";
+    siva.style.color="white";
     glow1.style.textShadow = '0px 0px 20px #fff, 0px 0px 20px #FAA831';
     glow2.style.textShadow = '0px 0px 20px #fff, 0px 0px 20px #FAA831';
 
@@ -79,7 +79,7 @@ const applyDark=()=>{
 }
 
 const applyLight=()=>{
-    themeImg.src = 'images/light-theme.png';
+    themeImg.src = 'slike/light-theme.png';
     body.style.backgroundColor="white"
     body.style.color="black";
     logoContainer.style.backgroundColor="white"
@@ -87,7 +87,7 @@ const applyLight=()=>{
     logoContainer.style.borderBottom="0"
     slider.style.backgroundColor="white"
     podnaslov.style.color="#777777";
-    grey.style.color="#777777";
+    siva.style.color="#777777";
     glow1.style.textShadow= " 0px 0px 10px #555, 0px 0px 20px #000"
     glow2.style.textShadow= " 0px 0px 10px #555, 0px 0px 20px #000"
 

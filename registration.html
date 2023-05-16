@@ -15,19 +15,19 @@
     <h1>Napravite nov nalog</h1>
     <form class="form">
         <label for="username-input" class="label">Korisnicko ime</label>
-        <input type="text" placeholder="Jovan87" id="username-input" class="input" required>
+        <input type="text" placeholder="Jovan87" id="username-input" class="input" required pattern="^(?=.*\d)[a-zA-Z0-9]+$">
 
         <label for="password-input" class="label">Lozinka</label>
-        <input type="password" placeholder="Lozinka" id="password-input" class="input" required>
+        <input type="password" placeholder="Lozinka" id="password-input" class="input" required pattern="^(?=.*[A-Z])(?=.*\d).+$">
 
         <label for="email-input" class="label">Email</label>
         <input type="email" placeholder="mihajlosaric@gmail.com" id="email-input" class="input" required>
 
-        <label for="town-input" class="label">Grad</label>
-        <input type="text" placeholder="Zrenjanin" id="town-input" class="input" required>
+        <label for="grad-input" class="label">Grad</label>
+        <input type="text" placeholder="Zrenjanin" id="grad-input" class="input" required>
 
-        <label for="phone-input" class="label">Telefon</label>
-        <input type="text" placeholder="+38162784356" id="phone-input" class="input" required>
+        <label for="telefon-input" class="label">Telefon</label>
+        <input type="text" placeholder="+38162784356" id="telefon-input" class="input" required pattern="^(\+\d+|\d+)$">
 
         <button id="register-button" class="button">Registruj se</button>
     </form>

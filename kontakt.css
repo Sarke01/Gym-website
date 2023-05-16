@@ -19,7 +19,7 @@
     background-color: white;
     z-index: 2;
 }
-.container{
+.kontejner{
     display: flex;
     height: 100%;
     margin: auto;
@@ -31,17 +31,17 @@
     max-width: 100%;
 }
 
-.levo img{
+.levo2 img{
     height: 32px;
     width: 32px;
 }
-.left,.middle,.right{
+.levo,.sredina1,.desno{
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.navigation-div{
+.navigacija-div{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,7 +49,7 @@
     width: 100%;
     margin:0 auto;
 }
-.navigation{
+.navigacija{
     height:45px ;
     display: flex;
     align-items: center;
@@ -60,26 +60,26 @@
     color: rgb(255, 255, 255);
 
 }
-.navigation p{
+.navigacija p{
     display: flex;
     justify-content: center;
 }
-.navigation p a{
+.navigacija p a{
     text-decoration:none;
     color: rgb(255, 255, 255);
 
-}.navigation p a:hover{
+}.navigacija p a:hover{
     color:#FAA831;
 }
 
-.image1{
-    background-image: url(images/gym.jpg);
+.slika1{
+    background-image: url(slike/gym.jpg);
     min-height: 45vh;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin-top: 100px; */
+    margin-top: 100px;
 }
 .hero{
     width: 900px;
@@ -116,7 +116,7 @@
     padding: 25px 20px;
 
 }
-.levo{
+.levo2{
     display: flex;
     flex-direction: column;
     justify-content:space-between;
@@ -131,7 +131,7 @@
     font-size: 20px;
     font-weight: 500;
 } 
-.grey{
+.sivo{
     color: rgb(119, 119, 119);
 }
 
@@ -176,8 +176,8 @@ textarea{
     background:#FAA831;
 }
 .footer{
-    background-image:url(images/footer.png);
-    min-width: 100vw;
+    background-image:url(slike/footer.png);
+    min-width: 95vw;
     background-position: center;
     background-size: cover;
     height:40vh;
@@ -220,7 +220,7 @@ textarea{
 	right: 10px;
 }
 
-.form-control.success i.fa-check-circle {
+/* .form-control.success i.fa-check-circle {
 	color: #2ecc71;
 	visibility: visible;
 }
@@ -228,7 +228,7 @@ textarea{
 .form-control.error i.fa-exclamation-circle {
 	color: #e74c3c;
 	visibility: visible;
-}
+} */
 
 .form-control small {
 	color: #e74c3c;
@@ -243,7 +243,7 @@ textarea{
 }
 
 
-.navigation button {
+.navigacija button {
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -291,7 +291,7 @@ textarea{
 
     }
 
-    .right{
+    .desno{
         display: none;
     }
 
@@ -300,12 +300,16 @@ textarea{
         height: auto;
     }
 
-    .navigation{
+    .navigacija{
         flex-direction: column;
         height: auto;
         width: 100%;
         padding: 8px 0;
         font-size: 1.25rem;
+    }
+
+    .slika1{
+        margin-top: 0;
     }
   }
   
@@ -315,7 +319,7 @@ textarea{
 
   @media screen and (min-width: 801px) {
     /* Show nav */
-    .navigation-div {
+    .navigacija-div {
       display: flex;
     }
     /* Hide hamburger menu */

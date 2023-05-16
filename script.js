@@ -27,16 +27,16 @@ window.addEventListener('load', () => {
     return null;
   }
 
-const name2=document.getElementById('name2');
+const name2=document.getElementById('ime2');
 const email=document.getElementById('email');
 const theme=document.getElementById('theme');
 const message=document.getElementById('message');
 const btn=document.getElementById('submit-btn');
-const darkTheme=document.querySelector(".navigation button");
+const darkTheme=document.querySelector(".navigacija button");
 const themeImg=darkTheme.querySelector("img");
 const body=document.querySelector("body");
-const logoContainer=document.querySelector(".container");
-const grey=document.querySelectorAll(".grey");
+const logoContainer=document.querySelector(".kontejner");
+const sivo=document.querySelectorAll(".sivo");
 const forms=document.querySelector(".forms")
 
 
@@ -115,28 +115,28 @@ function isAllGood(){
 }
 
 const applyDark=()=>{
-    themeImg.src = 'images/dark-theme.png';
+    themeImg.src = 'slike/dark-theme.png';
     body.style.backgroundColor="#777777"
     // body.style.color="white"
     logoContainer.style.backgroundColor="#777777"
     logoContainer.style.color="white"
     forms.style.backgroundColor="rgb(204, 200, 200)"
     // grey.style.color="white";
-    grey.forEach(element => {
+    sivo.forEach(element => {
         element.style.color="black";
     });
 
 }
 
 const applyLight=()=>{
-    themeImg.src = 'images/light-theme.png';
+    themeImg.src = 'slike/light-theme.png';
     body.style.backgroundColor="white"
     body.style.color="black";
     logoContainer.style.backgroundColor="white"
     logoContainer.style.color="#777777"
     forms.style.backgroundColor="white"
     // grey.style.color="#777777";
-    grey.forEach(element => {
+    sivo.forEach(element => {
         element.style.color="#777777";
     });
 }

@@ -1,6 +1,6 @@
 const hamburger=document.querySelector("#hamburger-menu");
-const navigation=document.querySelector(".navigation-div")
+const navigacija=document.querySelector(".navigacija-div")
 
 hamburger.addEventListener("click",(e)=>{
-    navigation.classList.toggle("toggle-active");
+    navigacija.classList.toggle("toggle-active");
 })

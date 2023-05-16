@@ -27,15 +27,15 @@ window.addEventListener('load', () => {
     return null;
   }
 
-const slika=document.getElementById('cenovnik-picture');
-const slika2=document.getElementById('cenovnik-picture1');
+const slika=document.getElementById('cenovnik-slika');
+const slika2=document.getElementById('cenovnik-slika1');
 const table1=document.getElementById('table-1');
 const dugme=document.getElementById('prices');
 const dugme1=document.getElementById('prices1');
 const body=document.querySelector("body");
-const darkTheme=document.querySelector(".navigation button");
+const darkTheme=document.querySelector(".navigacija button");
 const themeImg=darkTheme.querySelector("img");
-const logoContainer=document.querySelector(".container");
+const logoContainer=document.querySelector(".kontejner");
 const glow=document.querySelector("h1");
 
 
@@ -64,7 +64,7 @@ dugme1.addEventListener('click',function(){
 })
 
 const applyDark=()=>{
-  themeImg.src = 'images/dark-theme.png';
+  themeImg.src = 'slike/dark-theme.png';
   body.style.backgroundColor="#777777"
   body.style.color="white"
   logoContainer.style.backgroundColor="#777777"
@@ -75,7 +75,7 @@ const applyDark=()=>{
 }
 
 const applyLight=()=>{
-  themeImg.src = 'images/light-theme.png';
+  themeImg.src = 'slike/light-theme.png';
   body.style.backgroundColor="white"
   body.style.color="black";
   logoContainer.style.backgroundColor="white"
